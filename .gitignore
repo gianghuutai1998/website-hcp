@@ -1,0 +1,16 @@
+# Build
+bin/
+obj/
+out/
+*.exe
+*.dll
+*.log
+
+# User settings
+.vscode/
+*.user
+*.suo
+
+# ASP.NET specific
+appsettings.Development.json
+.env

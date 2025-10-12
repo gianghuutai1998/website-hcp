@@ -1,0 +1,13 @@
+@model IEnumerable<hcp.Models.Post>
+
+<h2>Danh sách bài viết</h2>
+@foreach (var post in Model)
+{
+    <div class="card mb-3">
+        <div class="card-body">
+            <h4>@post.Title</h4>
+            <p>@post.Content.Substring(0, Math.Min(post.Content.Length, 200))...</p>
+            <a href="/Post/Details/@post.Id">Xem chi tiết</a>
+        </div>
+    </div>
+}

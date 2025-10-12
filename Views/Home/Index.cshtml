@@ -1,0 +1,294 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/homepage.css" asp-append-version="true" />
+}
+
+<!-- Main Content Sections -->
+<div class="container-fluid" style="padding: 20px 0;">
+    <!-- Featured Images and About Us Section -->
+    <div class="row gioithieu-group" style="margin-bottom: 30px;">
+        <!-- Left Column - Featured Images -->
+        <div class="col-md-7 gioithieu">
+            <h4 class="tieu-de">
+                MỘT SỐ HÌNH ẢNH NỔI BẬT CỦA CÔNG TY
+            </h4>
+            <!-- Image Carousel -->
+            <div>
+                <div id="carouselImage" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselImage" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselImage" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselImage" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img src="~/image/noibat/moi-truong-1.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="text-on-image">Bảo vệ môi trường</h5>
+                            <p class="text-on-image">Ô nhiễm môi trường từ việc sử dụng xả thải các sản phẩm nhựa</p>
+                        </div>
+                        </div>
+                        <div class="carousel-item">
+                        <img src="~/image/noibat/moi-truong-2.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="text-on-image">Second slide label</h5>
+                            <p class="text-on-image">Some representative placeholder content for the second slide.</p>
+                        </div>
+                        </div>
+                        <div class="carousel-item">
+                        <img src="~/image/noibat/moi-truong-3.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="text-on-image">Third slide label</h5>
+                            <p class="text-on-image">Some representative placeholder content for the third slide.</p>
+                        </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselImage" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselImage" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column - About Us -->
+        <div class="col-md-5 gioithieu">
+            <h4 class="tieu-de"> GIỚI THIỆU </h4>
+            <div class="noi-dung-gioi-thieu">
+                <p>Công ty TNHH Thương mại - Xây dựng và Dịch vụ Môi trường Thừa Thiên Huế được thành lập năm 1975 với tên gọi "Phòng quản lý Đô thị và Nhà đất" phục vụ công tác vệ sinh môi trường thành phố.</p>
+                <p>Qua các giai đoạn phát triển, từ Nghị định 388/CP năm 1985, Nghị định 36/CP năm 1991, Nghị định 44/CP năm 1998, đến nay Công ty đã trở thành một doanh nghiệp nhà nước hoạt động trong lĩnh vực môi trường.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Buttons Section -->
+    <div class="row helper-group">
+        <div class="col-12">
+            <div class="help-list">
+                <button>
+                    <span>📞</span>
+                    <div>
+                        <div class="help-name">ĐƯỜNG DÂY NÓNG</div>
+                        <div>(+84) 383 080 398</div>
+                    </div>
+                </button>
+                <button>
+                    <span>🔧</span>
+                    <div>
+                        <div class="help-name">KINH DOANH DỊCH VỤ</div>
+                    </div>
+                </button>
+                <button>
+                    <span>📄</span>
+                    <div>
+                        <div class="help-name">HÓA ĐƠN ĐIỆN TỬ</div>
+                    </div>
+                </button>
+                <button>
+                    <span style="font-weight: bold; background-color: #0866FF; width: 30px;">f</span>
+                    <div>
+                        <div class="help-name">LIÊN KẾT FACEBOOK</div>
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Content Sections -->
+    <div class="row" style="margin-bottom: 30px;">
+        <div class="col-12">
+            <h3 style="color: #d32f2f; border-bottom: 3px solid #d32f2f; padding-bottom: 10px; margin-bottom: 20px;">
+                TIN TỨC & SỰ KIỆN
+            </h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin-bottom: 20px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <img src="~/image/logo.jpg" alt="News 1" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 15px; height: 165px;">
+                            <h5 style="color: #333; margin-bottom: 10px;">HCP triển khai thí điểm thu gom rác thải sinh hoạt bằng xe điện</h5>
+                            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;">Sáng ngày 20/11, Công ty HEPCO đã tổ chức ra quân tổng vệ sinh môi trường trên địa bàn thành phố Huế...</p>
+                            <a href="#" style="color: #d32f2f; text-decoration: none; font-weight: bold;">Đọc tiếp →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin-bottom: 20px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <img src="~/image/logo.jpg" alt="News 2" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 15px; height: 165px;">
+                            <h5 style="color: #333; margin-bottom: 10px;">Khánh thành nhà máy xử lý rác thải công nghệ cao</h5>
+                            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;">Nhà máy xử lý rác thải công nghệ cao vừa được khánh thành, góp phần nâng cao năng lực xử lý...</p>
+                            <a href="#" style="color: #d32f2f; text-decoration: none; font-weight: bold;">Đọc tiếp →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin-bottom: 20px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <img src="~/image/logo.jpg" alt="News 3" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 15px; height: 165px;">
+                            <h5 style="color: #333; margin-bottom: 10px;">Hội nghị tổng kết công tác năm 2024</h5>
+                            <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;">Hội nghị tổng kết công tác năm 2024 và triển khai nhiệm vụ năm 2025 đã diễn ra thành công...</p>
+                            <a href="#" style="color: #d32f2f; text-decoration: none; font-weight: bold;">Đọc tiếp →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video and Facebook Section -->
+    <div class="row" style="margin-bottom: 30px;">
+        <!-- Left Column --------------------------------------------------- Video Section -->
+        <div class="col-md-8">
+            <h3 style="color: #d32f2f; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">
+                VIDEO NỔI BẬT
+            </h3>
+
+            <div style="height: 470px; border: 1px solid lightgray; border-radius: 10px; overflow: hidden;">
+                <div id="carouselVideo" class="carousel slide">
+
+                    <!-- Nút chọn slide -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselVideo" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#carouselVideo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carouselVideo" data-bs-slide-to="2"></button>
+                    </div>
+
+                    <!-- Các video -->
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/WidgHUgWKV0"
+                                        title="Video 1"
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5 class="text-on-image">First slide label</h5>
+                                <p class="text-on-image">Some representative placeholder content for the second slide.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/VQqoVTtcTFY"
+                                        title="Video 2"
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5 class="text-on-image">Second slide label</h5>
+                                <p class="text-on-image">Some representative placeholder content for the second slide.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/1PDKB_WazDw"
+                                        title="Video 3"
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5 class="text-on-image">Third slide label</h5>
+                                <p class="text-on-image">Some representative placeholder content for the third slide.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Nút điều hướng -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselVideo" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselVideo" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column - Facebook Page -->
+        <div class="col-md-4">
+            <h3 style="color: #d32f2f; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">
+                FACEBOOK PAGE
+            </h3>
+            <!-- Nhúng Facebook -->
+            <div style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden; height: 480px; background: #fff;">
+                <iframe
+                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhepco.com.vn&tabs=timeline&width=410&height=470&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1103931966641749"
+                    width="100%"
+                    height="100%"
+                    style="border:none;overflow:hidden"
+                    scrolling="no"
+                    frameborder="0"
+                    allowfullscreen="true"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="row">
+        <div class="col-12">
+            <h3 style="color: #d32f2f; border-bottom: 3px solid #d32f2f; padding-bottom: 10px; margin-bottom: 20px;">
+                DỊCH VỤ CỦA CHÚNG TÔI
+            </h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <div style="text-align: center; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <div style="font-size: 48px; color: #4CAF50; margin-bottom: 15px;">🗑️</div>
+                        <h5 style="color: #333; margin-bottom: 10px;">Thu gom rác thải</h5>
+                        <p style="color: #666; font-size: 0.9em;">Dịch vụ thu gom rác thải sinh hoạt và công nghiệp</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div style="text-align: center; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <div style="font-size: 48px; color: #2196F3; margin-bottom: 15px;">💧</div>
+                        <h5 style="color: #333; margin-bottom: 10px;">Xử lý nước thải</h5>
+                        <p style="color: #666; font-size: 0.9em;">Hệ thống xử lý nước thải công nghiệp và sinh hoạt</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div style="text-align: center; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <div style="font-size: 48px; color: #FF9800; margin-bottom: 15px;">🏗️</div>
+                        <h5 style="color: #333; margin-bottom: 10px;">Công trình đô thị</h5>
+                        <p style="color: #666; font-size: 0.9em;">Xây dựng và duy tu bảo dưỡng hạ tầng đô thị</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div style="text-align: center; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <div style="font-size: 48px; color: #9C27B0; margin-bottom: 15px;">🌱</div>
+                        <h5 style="color: #333; margin-bottom: 10px;">Bảo vệ môi trường</h5>
+                        <p style="color: #666; font-size: 0.9em;">Các chương trình bảo vệ và cải thiện môi trường</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  const carousel = document.getElementById('carouselVideo');
+
+  // Khi carousel chuẩn bị chuyển slide
+  carousel.addEventListener('slide.bs.carousel', function () {
+    // Lấy tất cả iframe trong carousel
+    const iframes = carousel.querySelectorAll('iframe');
+    iframes.forEach(iframe => {
+      // Reset src để dừng phát video
+      const src = iframe.src;
+      iframe.src = src;
+    });
+  });
+</script>

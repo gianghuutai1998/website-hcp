@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - hcp</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/hcp.styles.css" asp-append-version="true" />
+    @RenderSection("Styles", required: false)
+</head>
+
+<body>
+    <header>
+        <div class="banner" style="background: url('./image/bg2.jpg')">
+            <div class="info-group">
+                <a href="/">
+                    <img class="logo" src="~/image/image_empty.png">
+                </a>
+                <div>
+                    <p class="company-name">CÔNG TY TNHH THƯƠNG MẠI - XÂY DỰNG VÀ DỊCH VỤ MÔI TRƯỜNG THỪA THIÊN HUẾ</p>
+                    <p class="company-address">103 Nguyễn Khoa Văn, Phường Phú Bài, Thành phố Huế</p>
+                </div>
+            </div>
+            <p class="hotline"> Hotline: (+84) 383 080 398 </p>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">GIỚI THIỆU</a>
+                <a class="navbar-brand" href="/">TIN TỨC - THÔNG BÁO</a>
+                <a class="navbar-brand" href="/">DỊCH VỤ</a>
+                <a class="navbar-brand" href="/">LIÊN HỆ</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: #FFFFFF" href="/Post/Create">Đăng bài</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: #FFFFFF" href="/Account/Logout">Đăng xuất (@User.Identity.Name)</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" style="flex: 1; margin-top: 180px; margin-bottom: 80px;">
+        <main role="main" class="pb-3">
+            <div class="container" style="flex: 1; margin-top: 180px; margin-bottom: 80px;">
+                @RenderBody()
+            </div>
+        </main>
+
+    <footer class="footer"
+        style=" width: 100%; max-width: 1500px;
+            border-top: 1px solid #dee2e6;
+            padding: 15px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-left: -102px;">
+
+        <div class="container">
+            <strong>CỔNG THÔNG TIN ĐIỆN TỬ</strong><br>
+            <strong>CÔNG TY TNHH THƯƠNG MẠI - XÂY DỰNG VÀ DỊCH VỤ MÔI TRƯỜNG THỪA THIÊN HUẾ</strong><br>
+            Địa chỉ: 103 Nguyễn Khoa Văn, Phường Phú Bài, Thành phố Huế<br>
+            Liên hệ: Hotline <strong>(+84) 383 080 398</strong> – Điện thoại <strong>(+84) 383 080 398</strong><br>
+            Email: <a href="mailto:info@hcp.com.vn">info@hcp.com.vn</a><br>
+            © HCP 2025
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

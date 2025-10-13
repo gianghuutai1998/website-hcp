@@ -41,7 +41,7 @@ namespace hcp.Controllers
             var user = _context.Users.FirstOrDefault(u => u.Username == username && u.Password == hashedPassword);
             if (user == null)
             {
-                ViewBag.Error = "Sai tài khoản hoặc mật khẩu";
+                ViewBag.Error = "Sai tài khoản hoặc mật khẩu " + hashedPassword;
                 return View();
             }
 
@@ -53,14 +53,16 @@ namespace hcp.Controllers
             var identity = new ClaimsIdentity(claims, "Auth");
             var principal = new ClaimsPrincipal(identity);
 
-            await HttpContext.SignInAsync("Auth", principal);
+            // await HttpContext.SignInAsync("Auth", principal);
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
 
             return RedirectToAction("Index", "Home");
         }
 
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync("Auth");
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index", "Home");
         }
     }

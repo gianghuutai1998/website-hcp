@@ -15,22 +15,19 @@ var jwtAudience = Environment.GetEnvironmentVariable("JWT_AUDIENCE");
 var builder = WebApplication.CreateBuilder(args);
 
 // Add DB context
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("DefaultConnection")
+));
 
-// Đăng ký xác thực đa chế độ: Cookie + JWT
-builder.Services.AddAuthentication(options =>
-{
+builder.Services.AddAuthentication(options => {
     options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
 })
-.AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
-{
+.AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options => {
     options.LoginPath = "/login";
     options.LogoutPath = "/logout";
 })
-.AddJwtBearer("JwtBearer", options =>
-{
+.AddJwtBearer("JwtBearer", options => {
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
@@ -57,7 +54,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-// Map API controllers (nếu bạn tách riêng API)
+// Map API controllers
 app.MapControllers();
 
 app.Run();

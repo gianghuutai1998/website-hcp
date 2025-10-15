@@ -13,14 +13,12 @@ namespace hcp.Controllers
             _context = context;
         }
 
-        // Xem danh sách bài đăng
         public IActionResult Index()
         {
             var posts = _context.Posts.OrderByDescending(p => p.CreatedAt).ToList();
             return View(posts);
         }
 
-        // Xem chi tiết
         public IActionResult Details(int id)
         {
             var post = _context.Posts.Find(id);
@@ -28,7 +26,6 @@ namespace hcp.Controllers
             return View(post);
         }
 
-        // Chỉ admin mới có thể thêm / sửa / xóa
         [Authorize(Roles = "Admin")]
         public IActionResult Create() => View();
 

@@ -27,10 +27,8 @@ namespace hcp.Controllers
             if (string.IsNullOrWhiteSpace(request.Username) || string.IsNullOrWhiteSpace(request.Password))
                 return BadRequest(new { message = "Vui lòng nhập đủ tài khoản và mật khẩu." });
 
-            var user = _context.ApiUsers.FirstOrDefault(u =>
-                u.Username == request.Username && u.IsActive);
+            var user = _context.ApiUsers.FirstOrDefault(u => u.Username == request.Username && u.IsActive);
 
-            // ✅ Dùng PasswordHelper thay vì VerifyPassword trực tiếp
             if (user == null || !PasswordHelper.VerifyPassword(request.Password, user.Password ?? string.Empty))
                 return Unauthorized(new { message = "Sai tài khoản hoặc mật khẩu!" });
 

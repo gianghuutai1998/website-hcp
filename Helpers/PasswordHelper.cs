@@ -7,13 +7,12 @@ namespace hcp.Helpers
 {
     public static class PasswordHelper
     {
-        /// <summary>
         /// Hash mật khẩu bằng PBKDF2 (chuẩn OWASP)
-        /// </summary>
         public static string HashPassword(string password)
         {
-            if (string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrWhiteSpace(password)) {
                 throw new ArgumentException("Password cannot be empty or null", nameof(password));
+            }
 
             // Tạo salt ngẫu nhiên (16 byte)
             byte[] salt = RandomNumberGenerator.GetBytes(16);
@@ -30,21 +29,17 @@ namespace hcp.Helpers
             return $"{Convert.ToBase64String(salt)}.{Convert.ToBase64String(hash)}";
         }
 
-        /// <summary>
-        /// Kiểm tra mật khẩu người dùng nhập có trùng với hash đã lưu không
-        /// </summary>
         public static bool VerifyPassword(string password, string? storedHash)
         {
-            if (string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(storedHash))
+            if (string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(storedHash)) {
                 return false;
+            }
 
-            // Cố gắng tách salt và hash
+            // Tách salt và hash
             var parts = storedHash.Split('.');
-            if (parts.Length != 2)
-                return false;
+            if (parts.Length != 2) return false;
 
-            try
-            {
+            try {
                 var salt = Convert.FromBase64String(parts[0]);
                 var stored = Convert.FromBase64String(parts[1]);
 
@@ -59,8 +54,7 @@ namespace hcp.Helpers
                 // So sánh byte một cách an toàn (tránh timing attack)
                 return CryptographicOperations.FixedTimeEquals(hash, stored);
             }
-            catch
-            {
+            catch {
                 // Nếu storedHash bị lỗi format base64
                 return false;
             }

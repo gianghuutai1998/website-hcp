@@ -4,13 +4,20 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - hcp</title>
+    <title>@ViewData["Title"]</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/hcp.styles.css" asp-append-version="true" />
     @RenderSection("Styles", required: false)
 </head>
+
+@{
+    var companyName = Environment.GetEnvironmentVariable("COMPANY_NAME");
+    var companyAddress = Environment.GetEnvironmentVariable("COMPANY_ADDRESS");
+    var companyPhone = Environment.GetEnvironmentVariable("COMPANY_PHONE");
+    var companyEmail = Environment.GetEnvironmentVariable("COMPANY_EMAIL");
+}
 
 <body>
     <header>
@@ -20,11 +27,11 @@
                     <img class="logo" src="~/image/image_empty.png">
                 </a>
                 <div>
-                    <p class="company-name">CÔNG TY TNHH THƯƠNG MẠI - XÂY DỰNG VÀ DỊCH VỤ MÔI TRƯỜNG THỪA THIÊN HUẾ</p>
-                    <p class="company-address">103 Nguyễn Khoa Văn, Phường Phú Bài, Thành phố Huế</p>
+                    <p class="company-name">@companyName</p>
+                    <p class="company-address">@companyAddress</p>
                 </div>
             </div>
-            <p class="hotline"> Hotline: (+84) 383 080 398 </p>
+            <p class="hotline"> Hotline: @companyPhone </p>
         </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
@@ -67,10 +74,10 @@
 
         <div class="container">
             <strong>CỔNG THÔNG TIN ĐIỆN TỬ</strong><br>
-            <strong>CÔNG TY TNHH THƯƠNG MẠI - XÂY DỰNG VÀ DỊCH VỤ MÔI TRƯỜNG THỪA THIÊN HUẾ</strong><br>
-            Địa chỉ: 103 Nguyễn Khoa Văn, Phường Phú Bài, Thành phố Huế<br>
-            Liên hệ: Hotline <strong>(+84) 383 080 398</strong> – Điện thoại <strong>(+84) 383 080 398</strong><br>
-            Email: <a href="mailto:info@hcp.com.vn">info@hcp.com.vn</a><br>
+            <strong>@companyName</strong><br>
+            Địa chỉ: @companyAddress<br>
+            Liên hệ: Hotline <strong>@companyPhone</strong> – Điện thoại <strong>@companyPhone</strong><br>
+            Email: <a href="mailto:info@hcp.com.vn">@companyEmail</a><br>
             © HCP 2025
         </div>
     </footer>

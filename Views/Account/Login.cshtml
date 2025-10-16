@@ -1,17 +1,38 @@
-<h2>Đăng nhập</h2>
-<form asp-action="Login" method="post">
-    <div class="form-group">
-        <label>Tên đăng nhập</label>
-        <input type="text" name="username" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label>Mật khẩu</label>
-        <input type="password" name="password" class="form-control" />
-    </div>
-    <button class="btn btn-primary mt-3" type="submit">Đăng nhập</button>
+@{
+    ViewData["Title"] = "Đăng nhập";
+}
 
-    @if (ViewBag.Error != null)
-    {
-        <div class="text-danger mt-2">@ViewBag.Error</div>
-    }
-</form>
+@section Styles {
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+}
+
+<div class="login-page">
+    <form asp-action="Login" method="post" class="login-form">
+        <div class="title">LOGIN</div>
+        <div class="form-group">
+            <input type="text" 
+                name="username" 
+                class="form-control" 
+                placeholder="Tên đăng nhập"
+                autocomplete="off" 
+                autocorrect="off" 
+                autocapitalize="none" 
+                spellcheck="false"/>
+        </div>
+        <div class="form-group">
+            <input type="password" 
+                name="password" 
+                class="form-control"
+                placeholder="Mật khẩu"
+                autocomplete="off" 
+                autocorrect="off" 
+                autocapitalize="none" 
+                spellcheck="false"/>
+        </div>
+        <button class="btn btn-primary mt-3 btn-login" type="submit">Đăng nhập</button>
+
+        @if (ViewBag.Error != null) {
+            <div class="text-danger mt-2">@ViewBag.Error</div>
+        }
+    </form>
+</div>

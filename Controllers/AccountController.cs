@@ -20,7 +20,13 @@ namespace hcp.Controllers
         }
 
         [HttpGet("/login")]
-        public IActionResult Login() => View();
+        public IActionResult Login() {
+            if (User?.Identity?.IsAuthenticated == true) {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View();
+        }
 
         [HttpPost("/login")]
         public async Task<IActionResult> Login(string username, string password)
